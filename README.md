@@ -4,6 +4,8 @@ A professional-grade Java implementation of Tic Tac Toe featuring two automated 
 
 ## Overview
 
+![Build & Run](https://github.com/AbdoCooder/tic-tac-toe/blob/main/tic-tac-toe-showcase.gif)
+
 This project demonstrates advanced multithreading concepts in Java through a fully playable Tic Tac Toe game. Two AI players autonomously compete while respecting thread safety and shared resource management.
 
 ## Key Features
