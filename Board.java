@@ -2,8 +2,8 @@
 import java.util.Objects;
 
 public class Board {
-    private int                 size            = 0;
-    private int                 winningNumber   = 3;
+    private int                 size            =  0;
+    private int                 winningNumber   =  3;
     private int                 lastMoveX       = -1;
     private int                 lastMoveY       = -1;
     private Symbol              currentTurn     = Symbol.X;             // Let assume that the X plays first
@@ -158,7 +158,7 @@ public class Board {
     }
 
     public synchronized void printMoveAndBoard(String playerName, Symbol symbol, int x, int y) {
-        System.out.println(playerName + " (" + symbol + ") -> [" + x + ", " + y + "] ✓");
+        System.out.println(playerName + " (" + symbol + ") -> [" + y + ", " + x + "] ✓");
         System.out.println(displayBoard());
         System.out.println();
     }
