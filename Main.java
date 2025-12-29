@@ -9,26 +9,25 @@ public class Main {
         int size;
         int winningNumber;
 
-        try (Scanner console = new Scanner(System.in)) {
-            while (true) {
-                try {
-                    System.out.println("Select the board size (3, 5, ...) :");
-                    size = console.nextInt();
-                    System.out.println("Select the number of strikes to win (3, 5, ...) :");
-                    winningNumber = console.nextInt();
-                    break;
-                } catch (InputMismatchException e) {
-                    System.err.println("Please enter a valid number!");
-                    console.nextLine(); // clear invalid token
-                }
+        Scanner console = new Scanner(System.in);
+        while (true) {
+            try {
+                System.out.println("Select the board size (3, 5, ...) :");
+                size = console.nextInt();
+                System.out.println("Select the number of strikes to win (3, 5, ...) :");
+                winningNumber = console.nextInt();
+                break;
+            } catch (InputMismatchException e) {
+                System.err.println("Please enter a valid number!");
+                console.nextLine(); // clear invalid token
             }
         }
 
         // constructing the board
         try {
             Board mainBoard = new Board(size, winningNumber);
-            Player p1 = new Player("Ahmed", mainBoard, Symbol.X);
-            Player p2 = new Player("Hamza", mainBoard, Symbol.O);
+            Player p1 = new Player("Ahmed", mainBoard, Symbol.X, console);
+            Player p2 = new Player("Hamza", mainBoard, Symbol.O, console);
 
             System.out.println("\n=== Tic Tac Toe Game Started ===");
             System.out.println("Board Size: " + size + "x" + size + " | Winning: " + winningNumber);
@@ -60,6 +59,7 @@ public class Main {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
+        console.close();
     }
 
     private static boolean pause(long millis) {

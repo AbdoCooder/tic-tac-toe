@@ -50,6 +50,7 @@ public class Board {
             lastMoveY = y;
             currentTurn = (currentTurn == Symbol.X) ? Symbol.O : Symbol.X;
             checkEnd();
+            printMoveAndBoard(symbol.toString(), symbol, x, y);
             notifyAll();
             return true;
         }
@@ -181,7 +182,7 @@ public class Board {
     }
 
     public int size() {
-        return this.size;
+        return size;
     }
     
     public boolean isGameOver() {
@@ -192,4 +193,7 @@ public class Board {
         return this.winner;
     }
 
+    public Symbol getTurn() {
+        return this.currentTurn;
+    }
 }
